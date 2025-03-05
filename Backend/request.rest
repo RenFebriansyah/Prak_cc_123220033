@@ -1,0 +1,23 @@
+GET http://localhost:4000/Notes
+
+###
+GET http://localhost:4000/Notes/1
+
+###
+POST http://localhost:4000/Notes
+Content-Type: application/json
+
+{
+    "penulis": "Wahyu", "judul": "Tugas", "isi": "tes 123!!!", "tag": "Tidak Penting"
+}
+
+###
+PATCH http://localhost:4000/Notes/2
+Content-Type: application/json
+
+{
+    "penulis": "Damai", "judul": "Tugas",  "isi": "Tugas CC udah belum??",  "tag": "Penting"
+}
+
+###
+DELETE http://localhost:4000/Notes/3
