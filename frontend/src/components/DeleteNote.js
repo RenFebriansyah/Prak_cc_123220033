@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../util";
 
 const DeleteNote = ({ id, onDelete }) => {
   const [isModalActive, setModalActive] = useState(false);
@@ -9,7 +10,7 @@ const DeleteNote = ({ id, onDelete }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:4000/Notes/${id}`);
+      await axios.delete(`${BASE_URL}/Notes/${id}`);
       onDelete(); // Refresh list setelah delete
       closeModal();
     } catch (error) {
