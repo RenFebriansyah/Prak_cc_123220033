@@ -13,7 +13,7 @@ const AddNote = () => {
   const saveNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/Notes", {
+      await axios.post(`${BASE_URL}/Notes`, {
         penulis,
         judul,
         isi,
