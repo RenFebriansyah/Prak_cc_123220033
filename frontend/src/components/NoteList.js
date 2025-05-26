@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import DeleteNote from "./DeleteNote"; // Import file baru
 import "../App.css";
+import { BASE_URL } from "../util";
 
 const NoteList = () => {
   const [notes, setNotes] = useState([]);
@@ -13,7 +14,7 @@ const NoteList = () => {
 
   const getNotes = async () => { 
     try {
-      const response = await axios.get("http://localhost:4000/Notes");
+      const response = await axios.get(`${BASE_URL}/Notes`);
       setNotes(response.data);
     } catch (error) {
       console.error("Error fetching notes:", error);
