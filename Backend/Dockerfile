@@ -1,6 +1,8 @@
-FROM node:20-alpine  
-WORKDIR /app  
-COPY . .  
-RUN npm install  
-EXPOSE 4000  
+
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --production
+COPY . .
+EXPOSE 8080
 CMD ["node", "index.js"]
