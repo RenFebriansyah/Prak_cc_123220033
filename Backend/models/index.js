@@ -1,6 +1,6 @@
 import db from "../config/database.js";
-import User from "UserModel.js";
-import Note from "NoteModel.js";
+import User from "./UserModel.js";
+import Note from "./NoteModel.js";
 
 // Relasi
 User.hasMany(Note, { foreignKey: "userId", onDelete: "CASCADE" });
