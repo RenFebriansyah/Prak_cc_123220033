@@ -4,6 +4,9 @@ import NoteRoute from "routes/NoteRoutes.js";
 import "models/index.js"; 
 import cookieParser from "cookie-parser";
 
+const app = express();
+const port = process.env.PORT || 4000;
+
 // Konfigurasi CORS agar mengizinkan domain frontend terdeploy
 const corsOptions = {
  origin: [
@@ -20,9 +23,12 @@ app.use(cors(corsOptions)); // Menggunakan opsi CORS
 // Menambahkan penanganan preflight request (OPTIONS)
 app.options("*", cors(corsOptions)); // Menanggapi preflight requests
 
-const app = express();
+
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 app.use(NoteRoute);
 
-app.listen(4000, ()=> console.log('Server aktif dan berjalan...'));
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
