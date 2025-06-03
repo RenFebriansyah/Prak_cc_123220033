@@ -35,7 +35,7 @@ const NoteList = () => {
 
   return (
     <div className="container mt-5">
-    <h1 className="title has-text-primary has-text-centered">NoteNow</h1>
+    <h1 className="title has-text-primary has-text-centered">NoteNow Catatan</h1>
       <div className="columns is-multiline">
         <div className="column is-12">
           <Link to="add" className="button is-success mb-4">
